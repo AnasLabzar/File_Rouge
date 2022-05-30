@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "my_Book",
-    "slug": "my_Book",
+    "name": "E-Book",
+    "slug": "E-Book",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
