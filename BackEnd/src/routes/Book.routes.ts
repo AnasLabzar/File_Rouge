@@ -25,8 +25,8 @@ router.post(
   cute(async (req, res) => {
     const { genre } = req.body;
     //@ts-ignore
-    const { bookCover } = req.files;
-    bookCover && (req.body.bookCover = await upload(bookCover[0]));
+    // const { bookCover } = req.files;
+    // bookCover && (req.body.bookCover = await upload(bookCover[0]));
     const book = await Book.create(req.body);
     await Genre.updateMany(
       { _id: { $in: genre } },
