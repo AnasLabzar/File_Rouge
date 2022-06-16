@@ -3,9 +3,13 @@ import React from 'react'
 import AppIntroSlider from 'react-native-app-intro-slider'
 import { render } from 'react-dom';
 import tw from 'twrnc';
+import { useNavigation } from '@react-navigation/native';
 
 
 const OnboardingScreen = () => {
+
+    const Navigation = useNavigation(); 
+
     const data = [
         {
             key: 'somethun',
@@ -29,36 +33,38 @@ const OnboardingScreen = () => {
             backgroundColor: '#22bcb5',
         },
     ];
-    
+
     state = { showHomePage: false };
     _renderItem = ({ item }) => {
         return (
-            <SafeAreaView style={tw`flex-1 h-full bg-[#f3e8d9]`}>
+            <View style={tw`flex-1 h-full bg-[#f3e8d9]`}>
                 <Image
                     source={item.image}
                     style={{
                         resizeMode: 'cover',
                         height: '70%',
                         width: "100%",
+                        position: 'relative',
+                        top: '5%',
                     }}
                 />
-            <Text style={tw`pt-10 pb-6 text-xl font-bold text-[#21465b] self-center`}>
-                {item.title}
-            </Text>
-            <Text style={tw`text-center text-[#b5b5b5] text-lg px-10`}>
-                {item.text}
-            </Text>
-            </SafeAreaView>
+                <Text style={tw`pt-10 pb-6 text-xl font-bold text-[#21465b] self-center`}>
+                    {item.title}
+                </Text>
+                <Text style={tw`text-center text-[#b5b5b5] text-lg px-10`}>
+                    {item.text}
+                </Text>
+            </View>
         )
     }
 
     return (
-        <AppIntroSlider 
+        <AppIntroSlider
             renderItem={_renderItem}
             data={data}
             activeDotStyle={tw`bg-black w-6`}
             style={tw`text-black`}
-            onClick={"hello world"}
+            onDone={() => Navigation.navigate('DemoScreen')}
         />
     );
 }
