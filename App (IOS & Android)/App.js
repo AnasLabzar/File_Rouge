@@ -7,6 +7,7 @@ import OnboardingScreen from "./screens/OnboardingScreen";
 import { store } from "./store";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AuthScreen from "./screens/AuthScreen";
 
 export default function App() {
 
@@ -16,7 +17,7 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen
+          {/* <Stack.Screen
             name="Onboarding"
             component={OnboardingScreen}
             options={{
@@ -33,6 +34,13 @@ export default function App() {
           <Stack.Screen
             name="HomeScreen"
             component={HomeScreen}
+            options={{
+              headerShown: false
+            }}
+          /> */}
+          <Stack.Screen
+            name="AuthScreen"
+            component={AuthScreen}
             options={{
               headerShown: false
             }}
