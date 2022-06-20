@@ -41,6 +41,7 @@ router.get(
   })
 );
 
+
 router.post(
   "/login",
   cute(async (req, res, next) => {
@@ -91,5 +92,14 @@ router.post(
     }
   })
 );
+
+router.post('/logout',
+cute(async(req,res)=>{
+  req.User.deleteToken(req.token,(err,user)=>{
+      if(err) return res.status(400).send(err);
+      res.sendStatus(200);
+  });
+
+})); 
 
 export { router as AuthRoutes };

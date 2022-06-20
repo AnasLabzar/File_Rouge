@@ -19,7 +19,54 @@ connection(() => {
   app.use("/genre", genreRoutes);
   app.use("/author", AuthorRoutes);
   app.use("/auth", AuthRoutes);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   app.use("/User", UserRoutes);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   app.use("/admin", AdminRoutes);
   app.use("/super", SuperRoutes);
 
